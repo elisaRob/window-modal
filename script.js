@@ -12,9 +12,20 @@ for(let i = 0 ; i<showModal.length;i++){
             overlay.classList.remove('hidden')
         })
  }
-
- closeModal.addEventListener('click',()=>{
+ const closeModal1=function (){
     modal.classList.add('hidden');
     overlay.classList.add('hidden')
+ }
+
+ closeModal.addEventListener('click',closeModal1);
+
+ 
+
+ document.addEventListener('keydown',function(e){
+    console.log(e.key)
+
+    if(e.key === 'Escape' && !modal.classList.contains('hidden')){
+            closeModal1();   
+    }
  })
 
